@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Poppins", serif;
+}
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  #walletContainer {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  /* Wallet Options */
+  .wallet-option {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .wallet-option:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .wallet-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+  
+  .wallet-label {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  input[type="radio"] {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  /* Connect Button */
+  #connectButton {
+    background-color: #6200ee;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  #connectButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  #connectButton:hover:not(:disabled) {
+    background-color: #3700b3;
+  }
+  
+  /* Status Message */
+  #statusMessage {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  
+    #walletContainer {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    
+    .wallet-option {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    
+    .wallet-option:hover {
+      background-color: #f9f9f9;
+    }
+    
+    .wallet-logo {
+      width: 32px;
+      height: 32px;
+      margin-right: 10px;
+    }
+    
+    .wallet-label {
+      flex-grow: 1;
+      font-weight: bold;
+    }
+    
+    #connectButton {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    #connectButton:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+    
+    #statusMessage {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+      background-color: #f0f0f0;
+    }
+    
+    /* Loading spinner styles */
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-left: 10px;
+      border: 3px solid rgba(255,255,255,.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }

@@ -1,0 +1,68 @@
+/* spacing,heading,general */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Poppins", serif;
+}
+
+/* button css */
+.btn-primary {
+    border: 1px solid #123d62;
+    --bs-btn-bg: #123d62;
+    --bs-btn-color: #dceaef;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 16px;
+}
+
+.btn-primary:hover {
+    border: 1px solid #0b3253;
+    background-color: #0b3253 !important;
+}
+
+.btn-outline-primary{
+    border: 1px solid #aeb9c2;
+    --bs-btn-bg: #f8fcfe;
+    --bs-btn-color: #123d62;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 16px;
+}
+
+.btn-outline-primary:hover {
+    background: #123d62;
+    border-color: #123d62;
+}
+
+/* Session Page Specific Styles */
+.session-page{
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-type{
+    flex-basis: 80%;
+}
+
+.walletIcon {
+    font-size: 90px; /* Adjusted based on the inline style in HTML, and kept it in CSS */
+}
+
+/* Responsive adjustments for smaller screens */
+@media(max-width: 769px){
+    .btn-primary, .btn-outline-primary {
+        padding: 6px 10px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 541px) {
+    .btn-primary, .btn-outline-primary {
+        padding: 4px 8px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,88 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ERC-6963 Wallet Selector</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 30px;
+    }
+    h2 {
+      color: #333;
+    }
+    #wallet-list button {
+      margin: 10px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #wallet-list button:hover {
+      background-color: #0056b3;
+    }
+    #status {
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h2>Select Your Wallet</h2>
+  <ul id="wallet-list"></ul>
+  <div id="status"></div>
+
+  <script>
+    const wallets = [];
+
+    // Show wallet in list
+    function addWallet(wallet) {
+      if (wallets.find(w => w.id === wallet.id)) return;
+      wallets.push(wallet);
+
+      const li = document.createElement("li");
+      li.innerHTML = `<button onclick="connect('${wallet.id}')">${wallet.name}</button>`;
+      document.getElementById("wallet-list").appendChild(li);
+    }
+
+    // ERC-6963 event listener
+    window.addEventListener("ethereum#initialized", (event) => {
+      const wallet = event.detail;
+      addWallet(wallet);
+    });
+
+    // Manual fallback (for MetaMask or any wallet using window.ethereum)
+    setTimeout(() => {
+      if (window.ethereum && !wallets.find(w => w.id === "metamask")) {
+        addWallet({
+          id: "metamask",
+          name: "MetaMask (Manual)",
+          provider: window.ethereum
+        });
+      }
+
+      if (wallets.length === 0) {
+        document.getElementById("status").innerText = "❌ No wallet detected. Install MetaMask or Rabby.";
+      }
+    }, 500); // slight delay to allow wallets to inject
+
+    // Connect function
+    function connect(walletId) {
+      const selectedWallet = wallets.find(w => w.id === walletId);
+      if (!selectedWallet) return alert("Wallet not found");
+
+      selectedWallet.provider
+        .request({ method: 'eth_requestAccounts' })
+        .then(accounts => {
+          document.getElementById("status").innerText = "✅ Connected: " + accounts[0];
+        })
+        .catch(err => {
+          document.getElementById("status").innerText = "❌ Error: " + err.message;
+        });
+    }
+  </script>
+</body>
+</html> -->
